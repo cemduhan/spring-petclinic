@@ -8,4 +8,5 @@ RUN ls /home/app/target
 
 FROM openjdk:11-jre-slim-buster 
 COPY --from=builder /home/app/target/spring-petclinic-2.7.0-SNAPSHOT.jar /home/ 
+EXPOSE 8080
 CMD ["java","-jar","/home/spring-petclinic-2.7.0-SNAPSHOT.jar"]
