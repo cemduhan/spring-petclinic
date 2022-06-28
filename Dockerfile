@@ -1,4 +1,4 @@
-FROM maven:3.5.0 as builder
+FROM maven:3.8.6-openjdk-11 as builder
 COPY . .
 RUN mvn clean install
 
