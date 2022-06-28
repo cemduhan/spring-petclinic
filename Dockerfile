@@ -3,7 +3,9 @@ COPY src /home/app/src
 COPY pom.xml /home/app
 RUN export MAVEN_OPTS="-Xms1024m  -Xmx1024m -XX:MaxPermSize=512m"
 RUN mvn -f /home/app/pom.xml clean package
+RUN ls /home/app
+RUN ls /home/app/target
 
 FROM openjdk:11-jre-slim-buster 
-COPY --from=builder /home/app/target/spring-petclinic-2.7.0.jar /home/app/target 
-CMD ["java","-jar","/home/app/target/spring-petclinic-2.7.0.jar"]
+COPY --from=builder /home/app/target/spring-petclinic-2.7.0-SNAPSHOT.jar /home/ 
+CMD ["java","-jar","/home/app/target/spring-petclinic-2.7.0-SNAPSHOT.jar"]
