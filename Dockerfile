@@ -1,5 +1,5 @@
 FROM maven:3.5.0 as builder
-COPY * *
+COPY . .
 RUN mvn clean install
 
 FROM openjdk:8-jre-alpine 
