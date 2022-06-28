@@ -50,8 +50,8 @@ spec:
                     --verbosity debug \
                     --insecure \
                     --skip-tls-verify \
-                    --destination dockername/myapp:v0.1.0 \
-                    --destination dockername/myapp:latest
+                    --destination dhncem/spring:v0.1.0 \
+                    --destination dhncem/spring:latest
                 '''
               }
             }
